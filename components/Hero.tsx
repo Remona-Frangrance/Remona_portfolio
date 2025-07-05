@@ -3,6 +3,16 @@ import { FaLocationArrow } from "react-icons/fa6";
 import MagicButton from "./MagicButton";
 import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
+import { ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+import { motion } from "framer-motion";
+import { BackgroundBeamsWithCollision } from "./ui/background-beams-with-collision";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+
+
 
 const Hero = () => {
   return (
@@ -40,7 +50,7 @@ const Hero = () => {
         />
       </div>
 
-      <div className="flex justify-center relative my-20 z-10">
+      <div className="flex justify-center relative my-0 z-10">
         <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col items-center justify-center">
           {/* <p className="uppercase tracking-widest text-xs text-center text-blue-100 max-w-80">
             Dynamic Portfolio with Next.js
@@ -51,7 +61,38 @@ const Hero = () => {
            *
            *  change md:text-6xl, add more responsive code
            */}
-          <TextGenerateEffect
+         
+   <div className="relative w-60 h-60 md:w-72 md:h-72 flex items-center justify-center">
+      {/* Morphing blob shape */}
+      <motion.div
+        animate={{
+          borderRadius: [
+            "42% 58% 59% 41% / 52% 36% 64% 48%",
+            "53% 47% 44% 56% / 47% 54% 46% 53%",
+            "42% 58% 59% 41% / 52% 36% 64% 48%",
+          ],
+        }}
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+        className={cn(
+          "absolute w-full h-full bg-[#6C47FF]/20 blur-xl animate-pulse",
+          "transition-all duration-1000"
+        )}
+      />
+
+      {/* Profile Image */}
+      <img
+        src="/RemonaPortfolio.png"
+        alt="Remona"
+        className="relative w-40 h-40 md:w-52 md:h-52 rounded-full object-cover border-[3px] border-white/10 shadow-xl"
+      />
+    </div>
+
+
+ <TextGenerateEffect
             words="Building Smarter Web Apps with Style and Purpose"
             className="text-center text-[40px] md:text-5xl lg:text-6xl"
           />

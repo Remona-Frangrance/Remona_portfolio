@@ -169,37 +169,19 @@ export const companies = [
 ];
 
 export const workExperience = [
-  {
+   {
     id: 1,
-    title: "Frontend Engineer Intern",
-    desc:
-      "Assisted in the development of a web-based platform using React.js, enhancing interactivity.",
-    className: "md:col-span-2",
+    title: "Full Stack Developer (MERN Stack)",
+    desc: "Currently developing and maintaining robust web applications using the MERN (MongoDB, Express.js, React.js, Node.js) stack. Responsible for end-to-end feature implementation and performance optimization.",
+    className: "md:col-span-2", // This will make it span two columns on medium screens and up
     thumbnail: "/exp1.svg",
   },
   {
     id: 2,
-    title: "Mobile App Dev - JSM Tech",
-    desc:
-      "Designed and developed mobile app for both iOS & Android platforms using React Native.",
-    className: "md:col-span-2", // change to md:col-span-2
+    title: "React & Node.js Intern",
+    desc: "Gained hands-on experience in front-end development with React.js and back-end services with Node.js. Contributed to interactive UI components and API integrations.",
+    className: "md:col-span-2", // This will make it span two columns on medium screens and up
     thumbnail: "/exp2.svg",
-  },
-  {
-    id: 3,
-    title: "Freelance App Dev Project",
-    desc:
-      "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
-    className: "md:col-span-2", // change to md:col-span-2
-    thumbnail: "/exp3.svg",
-  },
-  {
-    id: 4,
-    title: "Lead Frontend Developer",
-    desc:
-      "Developed and maintained user-facing features using modern frontend technologies.",
-    className: "md:col-span-2",
-    thumbnail: "/exp4.svg",
   },
 ];
 
