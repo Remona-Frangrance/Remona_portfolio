@@ -12,7 +12,7 @@ export const FloatingNav = ({
   navItems: {
     name: string;
     link: string;
-    icon?: JSX.Element;
+    icon?: JSX.Element | string;
   }[];
   className?: string;
 }) => {
