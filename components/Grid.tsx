@@ -79,32 +79,32 @@ const educationData = [
 
 const Grid = () => {
   return (
-    <section id="about" className="py-20 px-4 md:px-8 lg:px-12 text-white">
+    <section id="skills" className="py-20 px-4 md:px-8 lg:px-12 text-white scroll-mt-40">
       {/* Skills Section */}
-      <h2 className="text-4xl lg:text-5xl font-bold text-center mb-12 text-purple-400">My Skills</h2>
-        <Tabs
-          tabs={skillsData.map((category) => ({
-            value: category.value,
-            title: category.title,
-            content: (
-              <div className="p-6 bg-gray-900 rounded-xl border border-gray-800 shadow-lg">
-                <h3 className="text-xl font-bold text-white mb-4">{category.title}</h3>
-                <div className="flex flex-wrap gap-3">
-                  {category.skills.map((skill, idx) => (
-                    <span
-                      key={idx}
-                      className="px-4 py-2 bg-gray-800 rounded-full text-sm font-medium text-gray-300
-                                 border border-gray-700 hover:bg-gray-700 hover:text-white transition-colors duration-200"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ),
-          }))}
-          containerClassName="w-full"
-        />
+      <h1 className="heading">
+        My <span className="text-purple">Skills</span>
+      </h1>
+      <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {skillsData.map((category) => (
+          <div
+            key={category.value}
+            className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-[#0E1220] to-[#0B0E19] p-6 shadow-lg"
+          >
+            <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(60% 40% at 50% 0%, rgba(108,71,255,0.15) 0%, rgba(108,71,255,0) 100%)" }} />
+            <h3 className="text-xl font-semibold text-white mb-4">{category.title}</h3>
+            <div className="flex flex-wrap gap-3">
+              {category.skills.map((skill, idx) => (
+                <span
+                  key={idx}
+                  className="px-3 py-1.5 rounded-full text-sm font-medium text-gray-200 bg-white/5 border border-white/10 hover:bg-white/10 transition-colors"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
 
       {/* Work Experience Section - Using Timeline */}
       {/* <h2 className="text-4xl lg:text-5xl font-bold text-center mt-80   mb-12   text-blue-400">Work Experience</h2> */}
@@ -126,20 +126,23 @@ const Grid = () => {
       </div> */}
 
       {/* Education Section - Using Expandable Cards */}
-      <h2 className="text-4xl lg:text-5xl font-bold text-center mb-12 mt-80  text-green-400">Education</h2>
-      <div className="w-full max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+
+      <h1 id="education" className="heading mb-12 mt-80 scroll-mt-40">
+        My <span className="text-purple">Education</span>
+      </h1>
+      <div className="w-full max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
         {educationData.map((item) => (
           // Assuming ExpandableCard takes title, institution, year, and details as props
         <HoverBorderGradient
             key={item.id}
-            containerClassName="rounded-xl"
+            containerClassName="rounded-2xl"
             as="div"
-            className="flex flex-col items-start p-6 bg-gray-900 relative z-10 space-y-2"
+            className="flex flex-col items-start p-6 relative z-10 space-y-2 bg-gradient-to-b from-[#0E1220] to-[#0B0E19] border border-white/10"
           >
-            <h3 className="text-xl font-bold text-white">{item.degree}</h3>
-            <p className="text-lg text-gray-300">{item.institution}</p>
-            <p className="text-md text-gray-400">{item.year}</p>
-            <p className="text-sm text-gray-400 mt-2">{item.details}</p>
+            <h3 className="text-xl font-semibold text-white">{item.degree}</h3>
+            <p className="text-base text-gray-300">{item.institution}</p>
+            <p className="text-sm text-gray-400">{item.year}</p>
+            <p className="text-sm text-gray-300 mt-2">{item.details}</p>
           </HoverBorderGradient>
         ))}
       </div>

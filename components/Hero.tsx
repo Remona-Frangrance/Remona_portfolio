@@ -101,7 +101,7 @@ const Hero = () => {
             Hi! I&apos;m Remona, a dedicated MERN stack developer with a keen eye for UI/UX and a growing passion for AI-powered solutions.
           </p>
 
-          <a href="#about">
+          <a href="#skills">
             <MagicButton
               title="Show my work"
               icon={<FaLocationArrow />}

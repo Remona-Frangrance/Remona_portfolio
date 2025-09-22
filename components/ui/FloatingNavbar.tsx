@@ -1,13 +1,9 @@
 "use client";
-import React, { useState } from "react";
-import {
-  motion,
-  AnimatePresence,
-  useScroll,
-  useMotionValueEvent,
-} from "framer-motion";
+import React from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { FaFolderOpen, FaBriefcase, FaGraduationCap, FaEnvelope, FaScrewdriverWrench } from "react-icons/fa6";
 
 export const FloatingNav = ({
   navItems,
@@ -20,28 +16,25 @@ export const FloatingNav = ({
   }[];
   className?: string;
 }) => {
-  const { scrollYProgress } = useScroll();
+  // Keep navbar always visible
+  const visible = true;
 
-  // set true for the initial state so that nav bar is visible in the hero section
-  const [visible, setVisible] = useState(true);
-
-  useMotionValueEvent(scrollYProgress, "change", (current) => {
-    // Check if current is not undefined and is a number
-    if (typeof current === "number") {
-      let direction = current! - scrollYProgress.getPrevious()!;
-
-      if (scrollYProgress.get() < 0.05) {
-        // also set true for the initial state
-        setVisible(true);
-      } else {
-        if (direction < 0) {
-          setVisible(true);
-        } else {
-          setVisible(false);
-        }
-      }
+  const iconFor = (iconKey?: string) => {
+    switch (iconKey) {
+      case "skills":
+        return <FaScrewdriverWrench className="text-lg" />;
+      case "projects":
+        return <FaFolderOpen className="text-lg" />;
+      case "experience":
+        return <FaBriefcase className="text-lg" />;
+      case "education":
+        return <FaGraduationCap className="text-lg" />;
+      case "contact":
+        return <FaEnvelope className="text-lg" />;
+      default:
+        return null;
     }
-  });
+  };
 
   return (
     <AnimatePresence mode="wait">
@@ -76,13 +69,15 @@ export const FloatingNav = ({
             key={`link=${idx}`}
             href={navItem.link}
             className={cn(
-              "relative dark:text-neutral-50 items-center  flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
+              "relative dark:text-neutral-50 items-center flex gap-2 text-neutral-200 hover:text-white"
             )}
           >
-            <span className="block sm:hidden">{navItem.icon}</span>
-            {/* add !cursor-pointer */}
-            {/* remove hidden sm:block for the mobile responsive */}
-            <span className=" text-sm !cursor-pointer">{navItem.name}</span>
+            <span className="inline-flex items-center justify-center md:hidden">
+              {React.isValidElement(navItem.icon)
+                ? navItem.icon
+                : iconFor(navItem.icon)}
+            </span>
+            <span className="text-sm !cursor-pointer hidden md:inline">{navItem.name}</span>
           </Link>
         ))}
         {/* remove this login btn */}

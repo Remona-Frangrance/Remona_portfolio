@@ -65,35 +65,27 @@ const socialLinksData = [
 const Clients = () => {
   return (
     <section id="connect" className="py-20 px-4 md:px-8 lg:px-12 bg-gray-950 text-white font-inter">
-      <h1 className="heading text-center text-4xl lg:text-5xl font-bold mb-12">
-        Connect <span className="text-purple-400">With Me</span>
+      <h1 className="heading mb-12">
+        Connect <span className="text-purple">With Me</span>
       </h1>
 
-      <div className="flex flex-wrap justify-center gap-8 max-w-5xl mx-auto">
-        {socialLinksData.map((link) => (
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        {socialLinksData.map((link, i) => (
           <a
             key={link.id}
             href={link.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="group relative w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.33%-1.5rem)] h-[220px]
-                       bg-gray-900 rounded-xl border border-gray-800 shadow-lg overflow-hidden
-                       transition-all duration-300 ease-out transform hover:-translate-y-2 hover:shadow-xl
-                       flex flex-col items-center justify-center p-6 text-center"
+            className="group relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-[#0E1220] to-[#0B0E19] p-6"
           >
-            {/* Background gradient on hover */}
-            <div
-              className="absolute inset-0 bg-gradient-to-br from-purple-600 to-blue-500 opacity-0
-                         group-hover:opacity-100 transition-opacity duration-300 ease-out"
-            ></div>
-
-            {/* Content */}
-            <div className="relative z-10 flex flex-col items-center justify-center">
-              {link.icon}
-              <h3 className="text-xl font-bold text-white mt-4 mb-2">{link.name}</h3>
-              <p className="text-sm text-gray-400 group-hover:text-white transition-colors duration-300">
-                {link.description}
-              </p>
+            <div className="absolute -inset-1 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{
+              background:
+                "radial-gradient(60% 40% at 50% 0%, rgba(108,71,255,0.35) 0%, rgba(108,71,255,0) 100%)",
+            }} />
+            <div className="relative z-10 flex flex-col items-center text-center">
+              <div className="scale-100 group-hover:scale-110 transition-transform duration-300">{link.icon}</div>
+              <h3 className="text-lg font-semibold text-white mt-4 mb-1">{link.name}</h3>
+              <p className="text-sm text-gray-300">{link.description}</p>
             </div>
           </a>
         ))}

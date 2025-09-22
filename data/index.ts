@@ -1,7 +1,9 @@
 export const navItems = [
-  { name: "About", link: "#about" },
-  { name: "Projects", link: "#projects" },
-  { name: "Contact", link: "#contact" },
+  { name: "Skills", link: "#skills", icon: "skills" },
+  { name: "Projects", link: "#projects", icon: "projects" },
+  { name: "Experience", link: "#experience", icon: "experience" },
+  { name: "Education", link: "#education", icon: "education" },
+  { name: "Contact", link: "#contact", icon: "contact" },
 ];
 
 export const gridItems = [
@@ -78,6 +80,7 @@ export const projects = [
     img: "/p1.svg",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/node.svg", "/mongo.svg", "/stripe.svg"],
     link: "https://edusphere.vercel.app", // or your actual link
+    type: "professional",
   },
   {
     id: 2,
@@ -87,6 +90,7 @@ export const projects = [
     img: "/p2.svg",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/openai.svg", "/stripe.svg"],
     link: "https://ai-studio.vercel.app", // replace with your link
+    type: "personal",
   },
   {
     id: 3,
@@ -96,6 +100,7 @@ export const projects = [
     img: "/p3.svg",
     iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
     link: "https://apple-3d.vercel.app",
+    type: "dummy",
   },
   {
     id: 4,
@@ -105,6 +110,7 @@ export const projects = [
     img: "/p4.svg",
     iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
     link: "https://solar-3d.vercel.app",
+    type: "dummy",
   },
 ];
 
