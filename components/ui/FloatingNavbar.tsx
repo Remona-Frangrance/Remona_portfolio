@@ -23,12 +23,12 @@ export const FloatingNav = ({
     switch (iconKey) {
       case "skills":
         return <FaScrewdriverWrench className="text-lg" />;
+      case "education":
+         return <FaGraduationCap className="text-lg" />;
       case "projects":
         return <FaFolderOpen className="text-lg" />;
       case "experience":
         return <FaBriefcase className="text-lg" />;
-      case "education":
-        return <FaGraduationCap className="text-lg" />;
       case "contact":
         return <FaEnvelope className="text-lg" />;
       default:

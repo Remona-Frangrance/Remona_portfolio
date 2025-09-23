@@ -10,29 +10,61 @@ import { Tabs } from './ui/tabs';
 // Placeholder data structures - you will replace these with your actual data
 const skillsData = [
   {
-    value: "frontend",
-    title: "Frontend Technologies",
-    skills: ["HTML", "CSS", "JavaScript", "ReactJS", "Next.js"],
+    value: "languages",
+    title: "Languages",
+    skills: ["JavaScript", "TypeScript", "MongoDB", "MySQL", "HTML", "(S)CSS"],
   },
   {
-    value: "styling",
-    title: "Styling Frameworks",
-    skills: ["Bootstrap", "TailwindCSS", "MaterialUI"],
+    value: "libs_frameworks",
+    title: "Libraries & Frameworks",
+    skills: [
+      "Node.js",
+      "Express",
+      "React",
+      "NextJS 14",
+      "TailwindCSS",
+      "NestJS",
+      "TanStack Query",
+    ],
   },
   {
-    value: "backend_db",
-    title: "Backend & Databases",
-    skills: ["NodeJS", "ExpressJS", "MySQL", "MongoDB", "PostgreSQL", "Firebase"],
+    value: "tools_platforms",
+    title: "Tools & Platforms",
+    skills: [
+      "Git",
+      "Fork",
+      "GitHub Desktop",
+      "Railway",
+      "Render",
+      "Vercel",
+      "Firebase",
+      "AWS (EC2, Lambda, S3 – theoretical knowledge)",
+    ],
   },
   {
-    value: "dev_tools",
-    title: "Development Tools",
-    skills: ["VS Code", "Git", "GitHub", "Postman", "Thunder Client", "MongoDB Compass", "Swagger"],
+    value: "payments_media",
+    title: "Payments & Media Services",
+    skills: ["Stripe", "Cloudinary"],
   },
   {
-    value: "soft_biz",
-    title: "Business & Soft Skills",
-    skills: ["Team Work", "Time Management", "Attention to detail", "Zoho Sign", "Stripe"],
+    value: "api_tools",
+    title: "API Tools",
+    skills: ["Postman", "Thunder Client"],
+  },
+  {
+    value: "design_prototyping",
+    title: "Design & Prototyping",
+    skills: ["Canva"],
+  },
+  {
+    value: "concepts",
+    title: "Concepts",
+    skills: [
+      "Clean Architecture",
+      "MVC Architecture",
+      "SOLID Principles",
+      "Agile Methodologies",
+    ],
   },
 ];
 

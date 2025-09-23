@@ -1,9 +1,51 @@
 "use client";
 
 import { FaLocationArrow } from "react-icons/fa6";
+import {
+  SiReact,
+  SiTypescript,
+  SiTailwindcss,
+  SiRedux,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+  SiStripe,
+  SiFramer,
+  SiMui,
+  SiVite,
+} from "react-icons/si";
+import type { ComponentType } from "react";
 
 import { projects } from "@/data";
 import { PinContainer } from "./ui/Pin";
+
+const ICONS: Record<string, ComponentType<{ className?: string; color?: string }>> = {
+  react: SiReact,
+  typescript: SiTypescript,
+  tailwindcss: SiTailwindcss,
+  redux: SiRedux,
+  nodejs: SiNodedotjs,
+  express: SiExpress,
+  mongodb: SiMongodb,
+  stripe: SiStripe,
+  framer: SiFramer,
+  mui: SiMui,
+  vite: SiVite,
+};
+
+const BRAND_COLORS: Record<string, string> = {
+  react: "#61DAFB",
+  typescript: "#3178C6",
+  tailwindcss: "#06B6D4",
+  redux: "#764ABC",
+  nodejs: "#339933",
+  express: "#FFFFFF", // express logo is black; use white on dark bg
+  mongodb: "#47A248",
+  stripe: "#635BFF",
+  framer: "#0055FF",
+  mui: "#007FFF",
+  vite: "#646CFF",
+};
 
 const RecentProjects = () => {
   const renderProjectCard = (item: any) => (
@@ -32,15 +74,26 @@ const RecentProjects = () => {
 
         <div className="flex items-center justify-between mt-7 mb-3">
           <div className="flex items-center">
-            {item.iconLists.map((icon: string, index: number) => (
-              <div
-                key={index}
-                className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
-                style={{ transform: `translateX(-${5 * index + 2}px)` }}
-              >
-                <img src={icon} alt="icon5" className="p-2" />
-              </div>
-            ))}
+            {item.iconLists.map((key: string, index: number) => {
+              const Icon = ICONS[key];
+              return (
+                <div
+                  key={index}
+                  className="border border-white/[.2] rounded-full bg-black lg:w-10 lg:h-10 w-8 h-8 flex justify-center items-center"
+                  style={{ transform: `translateX(-${5 * index + 2}px)` }}
+                  title={key}
+                >
+                  {Icon ? (
+                    <Icon
+                      className="lg:text-xl text-base"
+                      color={BRAND_COLORS[key] || "#FFFFFF"}
+                    />
+                  ) : (
+                    <span className="text-[10px] text-white/80 px-1 capitalize">{key}</span>
+                  )}
+                </div>
+              );
+            })}
           </div>
           <div className="flex justify-center items-center">
             <p className="flex lg:text-xl md:text-xs text-sm text-purple">Check Live Site</p>

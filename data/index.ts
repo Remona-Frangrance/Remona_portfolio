@@ -1,8 +1,8 @@
 export const navItems = [
   { name: "Skills", link: "#skills", icon: "skills" },
+  { name: "Education", link: "#education", icon: "education" },
   { name: "Projects", link: "#projects", icon: "projects" },
   { name: "Experience", link: "#experience", icon: "experience" },
-  { name: "Education", link: "#education", icon: "education" },
   { name: "Contact", link: "#contact", icon: "contact" },
 ];
 
@@ -72,45 +72,68 @@ export const gridItems = [
 ];
 
 export const projects = [
+  // Professional Projects
   {
     id: 1,
-    title: "EduSphere - E-learning Platform",
+    title: "Inventive Byte",
     des:
-      "An educational platform with board-wise subjects and resources, subscription access via Stripe, and a powerful admin panel for content management.",
-    img: "/p1.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/node.svg", "/mongo.svg", "/stripe.svg"],
-    link: "https://edusphere.vercel.app", // or your actual link
+      "Led the frontend and admin panel development. Designed dashboards, content tools, and optimized UI/UX; collaborated closely with backend for smooth data integration.",
+    img: "/invbyte.png",
+    iconLists: ["react", "typescript", "tailwindcss", "redux"],
+    link: "https://stg.inventivebyte.com/",
     type: "professional",
   },
   {
     id: 2,
-    title: "AI Text & Image Generator SaaS",
+    title: "University of Bay Area",
     des:
-      "A Canva-style AI-powered SaaS app that generates images and text with OpenAI APIs, featuring a credit-based payment system.",
-    img: "/p2.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/openai.svg", "/stripe.svg"],
-    link: "https://ai-studio.vercel.app", // replace with your link
-    type: "personal",
+      "Built and maintained frontend, backend, and admin features. Integrated Stripe payments, developed secure REST APIs, and streamlined admin workflows.",
+    img: "/uba.png",
+    iconLists: ["react", "nodejs", "express", "mongodb", "stripe"],
+    link: "https://ubayarea.org/",
+    type: "professional",
   },
   {
     id: 3,
-    title: "Animated Apple iPhone 15 3D Clone",
+    title: "Video Streaming Platform",
     des:
-      "A clone of the Apple iPhone 15 Pro website built with GSAP and Three.js, with smooth 3D transitions and product animations.",
+      "Backend for secure video upload, storage, and streaming with RBAC and optimized APIs for performance and scalability.",
     img: "/p3.svg",
-    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
-    link: "https://apple-3d.vercel.app",
-    type: "dummy",
+    iconLists: ["nodejs", "express", "mongodb", "jwt"],
+    link: "#",
+    type: "professional",
   },
   {
     id: 4,
-    title: "3D Solar System Explorer",
+    title: "Audio Streaming Platform",
     des:
-      "Explore the planets with an interactive Three.js-powered 3D solar system, built to demonstrate spatial design and animation.",
+      "Backend for audio upload, playlist management, real-time streaming, search, categorization, and personalized preferences with JWT security.",
     img: "/p4.svg",
-    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
-    link: "https://solar-3d.vercel.app",
-    type: "dummy",
+    iconLists: ["nodejs", "express", "mongodb", "jwt"],
+    link: "#",
+    type: "professional",
+  },
+
+  // Personal Projects
+  {
+    id: 5,
+    title: "EduSphere",
+    des:
+      "Full‑stack platform with responsive React frontend and Node.js + Express backend, admin panel, and CI/CD on Vercel.",
+    img: "/edusphere.png",
+    iconLists: ["react", "tailwindcss", "typescript", "framer", "mui", "emotion", "vite"],
+    link: "https://edusphere-frontent.vercel.app/",
+    type: "personal",
+  },
+  {
+    id: 6,
+    title: "HF Interiors",
+    des:
+      "MERN website and admin panel with custom CMS features and real-time content updates via backend APIs.",
+    img: "/hfinteriorss.png",
+    iconLists: ["react", "tailwindcss", "mongodb", "express", "nodejs"],
+    link: "http://hfinteriorss.com/",
+    type: "personal",
   },
 ];
 
