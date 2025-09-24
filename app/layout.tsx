@@ -19,7 +19,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="icon" href="/jsm-logo.png" sizes="any" />
+        <link rel="icon" href="/app.svg" type="image/svg+xml" />
+        <link rel="icon" href="/jsm-logo.png" type="image/png" sizes="32x32" />
+        <link rel="apple-touch-icon" href="/jsm-logo.png" />
       </head>
       <body className={inter.className}>
         <ThemeProvider
