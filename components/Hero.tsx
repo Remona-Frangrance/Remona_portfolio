@@ -40,7 +40,7 @@ const Hero = () => {
        */}
       <div
         className="h-screen w-full dark:bg-black-100 bg-white dark:bg-grid-white/[0.03] bg-grid-black-100/[0.2]
-       absolute top-0 left-0 flex items-center justify-center"
+       absolute top-0 left-0 flex items-center justify-center pointer-events-none"
       >
         {/* Radial gradient for the container to give a faded look */}
         <div
@@ -92,22 +92,36 @@ const Hero = () => {
     </div>
 
 
- <TextGenerateEffect
-            words="Building Smarter Web Apps with Style and Purpose"
-            className="text-center text-[40px] md:text-5xl lg:text-6xl"
-          />
-
-          <p className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl">
-            Hi! I&apos;m Remona, a dedicated MERN stack developer with a keen eye for UI/UX and a growing passion for AI-powered solutions.
-          </p>
-
-          <a href="#skills">
-            <MagicButton
-              title="Show my work"
-              icon={<FaLocationArrow />}
-              position="right"
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
+            <TextGenerateEffect
+              words="Building Smarter Web Apps with Style and Purpose"
+              className="text-center text-[40px] md:text-5xl lg:text-6xl"
             />
-          </a>
+          </motion.div>
+
+          <motion.p
+            className="text-center md:tracking-wider mb-4 text-sm md:text-lg lg:text-2xl"
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.15 }}
+          >
+            Hi! I&apos;m Remona, a dedicated MERN stack developer with a keen eye for UI/UX and a growing passion for AI-powered solutions.
+          </motion.p>
+
+          <div className="flex items-center gap-3">
+           
+            <a href="/Remona_Resume_2025.pdf" download target="_blank" rel="noopener noreferrer">
+              <MagicButton
+                title="Download Resume"
+                icon={<FaLocationArrow />}
+                position="right"
+              />
+            </a>
+          </div>
         </div>
       </div>
     </div>
